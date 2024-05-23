@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Changepass from "./pages/Changepass";
 import AddWord from "./pages/AddWord";
+import Quiz from "./pages/Quiz";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Dashboard />} />
+          <Route path="/quiz" element={<Quiz />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/changepass" element={<Changepass />} />

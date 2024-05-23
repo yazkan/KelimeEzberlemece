@@ -19,7 +19,7 @@ function AddWord() {
     // Burada form verileriyle bir şeyler yapabilirsiniz
     console.log(englishWord, turkishEquivalent, usageSentences, file);
 
-    navigate("/login"); // Form işlemleri tamamlandıktan sonra yönlendirme
+    navigate("/"); // Form işlemleri tamamlandıktan sonra yönlendirme
   };
 
   return (
@@ -54,7 +54,7 @@ function AddWord() {
         <label htmlFor="file">Resim Dosyası:</label>
         <input id="file" name="file" type="file" onChange={handleFileChange} />
 
-        <button type="submit">Onayla</button>
+        <button type="submit">Kelimeyi Ekle</button>
       </form>
     </div>
   );

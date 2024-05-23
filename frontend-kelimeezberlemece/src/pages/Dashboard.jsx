@@ -103,7 +103,7 @@ const Dashboard = () => {
             textAlign: "center",
           }}
         >
-          Cbü Yazılım Mühendisliği ©2024 Created by Nazmi Yazkan
+          MCBU Yazılım Mühendisliği ©2024 Created by Nazmi Yazkan
         </Footer>
       </Layout>
     </Layout>
