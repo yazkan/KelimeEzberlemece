@@ -1,0 +1,66 @@
+.words-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.word-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f0f0f0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  .word-info {
+    width: 75%; // Metin bilgisini kapsayan alanın genişliği
+  }
+
+  .word-image {
+    width: 160px;
+    height: 160px; // Resmin boyutları
+    object-fit: cover; // Aspect ratio korunur
+    border-radius: 4px;
+  }
+
+  input[type="text"] {
+    border: 2px solid #ccc; // Gri kenarlık
+    border-radius: 4px; // Kenarları yuvarlak
+    padding: 8px 12px; // İç boşluk
+    font-size: 16px; // Yazı tipi boyutu
+    width: 100%; // Genişlik, içeriği tam dolduracak şekilde
+    margin-top: 10px; // Üstten boşluk
+    margin-bottom: 10px;
+    box-sizing: border-box; // Padding ve border dahil genişlik hesaplaması
+
+    &:focus {
+      border-color: #007bff; // Odaklanıldığında mavi kenarlık
+      box-shadow: 0 0 8px rgba(0, 123, 255, 0.2); // Odaklanma gölgesi
+      outline: none; // Varsayılan dış çizgiyi kaldır
+    }
+  }
+}
+
+h3 {
+  color: #797979;
+}
+
+.load-btn {
+  padding: 10px 20px;
+  background-color: #10054d;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #2196f3;
+  }
+}

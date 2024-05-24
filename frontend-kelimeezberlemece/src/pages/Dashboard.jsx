@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import {
   DesktopOutlined,
-  FileOutlined,
-  PieChartOutlined,
-  TeamOutlined,
-  UserOutlined,
+  FormOutlined,
+  PlusSquareOutlined,
+  SettingOutlined,
+  LogoutOutlined,
 } from "@ant-design/icons";
 import { Breadcrumb, Layout, Menu, theme } from "antd";
 const { Header, Content, Footer, Sider } = Layout;
-
-//bu sayfa düzenlenecek!!!!! belki değiştirilecek??
+import AddWord from "./AddWord";
+import Quiz from "./Quiz";
+import Report from "./Report";
+import Settings from "./Settings";
+import { useNavigate } from "react-router-dom";
 
 function getItem(label, key, icon, children) {
   return {
@@ -21,21 +24,23 @@ function getItem(label, key, icon, children) {
 }
 
 const items = [
-  getItem("Option 1", "1", <PieChartOutlined />),
-  getItem("Option 2", "2", <DesktopOutlined />),
-  getItem("User", "sub1", <UserOutlined />, [
-    getItem("Tom", "3"),
-    getItem("Bill", "4"),
-    getItem("Alex", "5"),
-  ]),
-  getItem("Team", "sub2", <TeamOutlined />, [
-    getItem("Team 1", "6"),
-    getItem("Team 2", "8"),
-  ]),
-  getItem("Files", "9", <FileOutlined />),
+  getItem("Sınav", "1", <FormOutlined />),
+  getItem("Kelime Ekle", "2", <PlusSquareOutlined />),
+  getItem("Rapor", "3", <DesktopOutlined />),
+  getItem("Ayarlar", "4", <SettingOutlined />),
+  getItem("Çıkış", "5", <LogoutOutlined />),
 ];
 const Dashboard = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(1);
+  const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+
+  const handleExit = () => {
+    localStorage.removeItem("currentUser");
+    navigate("/login");
+  };
+
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
@@ -59,6 +64,9 @@ const Dashboard = () => {
           defaultSelectedKeys={["1"]}
           mode="inline"
           items={items}
+          onSelect={(e) => {
+            setSelectedItem(e.key);
+          }}
         />
       </Sider>
       <Layout>
@@ -83,10 +91,15 @@ const Dashboard = () => {
             style={{
               margin: "16px 0",
             }}
-          >
-            <Breadcrumb.Item>User</Breadcrumb.Item>
-            <Breadcrumb.Item>Bill</Breadcrumb.Item>
-          </Breadcrumb>
+            items={[
+              {
+                title: "Kullanıcı",
+              },
+              {
+                title: user.name,
+              },
+            ]}
+          />
           <div
             style={{
               padding: 24,
@@ -95,7 +108,11 @@ const Dashboard = () => {
               borderRadius: borderRadiusLG,
             }}
           >
-            Bill is a cat.
+            {selectedItem == 1 && <Quiz />}
+            {selectedItem == 2 && <AddWord />}
+            {selectedItem == 3 && <Report />}
+            {selectedItem == 4 && <Settings />}
+            {selectedItem == 5 && handleExit()}
           </div>
         </Content>
         <Footer

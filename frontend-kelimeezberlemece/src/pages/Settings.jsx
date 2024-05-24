@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import newRequest from "../../utils/newRequest.js";
 import "./Quiz.scss";
-import defaultImg from "../assets/react.svg";
 
 function Quiz() {
   const [words, setWords] = useState([]);
@@ -21,8 +20,9 @@ function Quiz() {
   };
 
   const formatPath = (path) => {
-    console.log("http://localhost:3000/" + path.replace(/\\/g, "/"));
-    return "http://localhost:3000/" + path.replace(/\\/g, "/");
+    return path
+      ? `../../../server-kelimeezberlemece/${path.replace(/\\/g, "/")}`
+      : "../assets/react.svg";
   };
 
   return (
@@ -37,8 +37,9 @@ function Quiz() {
             <p>{word.sentences}</p>
           </div>
           <img
-            src={word.picture_name ? formatPath(word.picture_name) : defaultImg}
+            src={formatPath(word.picture_name)}
             alt={`${word.word} visual representation`}
+            className="word-image"
           />
         </div>
       ))}
