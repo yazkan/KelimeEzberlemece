@@ -37,6 +37,7 @@ function Quiz() {
             <p>{word.sentences}</p>
           </div>
           <img
+            className="word-image"
             src={word.picture_name ? formatPath(word.picture_name) : defaultImg}
             alt={`${word.word} visual representation`}
           />

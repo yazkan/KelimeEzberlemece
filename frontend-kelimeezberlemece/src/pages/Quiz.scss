@@ -23,8 +23,9 @@
   .word-image {
     width: 160px;
     height: 160px; // Resmin boyutları
-    object-fit: cover; // Aspect ratio korunur
+    object-fit: fill; // Aspect ratio korunur
     border-radius: 4px;
+    padding: 10px;
   }
 
   input[type="text"] {
