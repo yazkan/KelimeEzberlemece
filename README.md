@@ -1,8 +1,67 @@
-# React + Vite
+# Kelime Ezberleme Sistemi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Proje Hakkında
 
-Currently, two official plugins are available:
+Kelime Ezberleme Sistemi, kullanıcıların İngilizce kelimeleri etkili bir şekilde ezberlemelerine yardımcı olmak amacıyla geliştirilmiş bir web uygulamasıdır. Uygulama, kullanıcıların kelimeleri eklemelerini, testler yapmalarını ve öğrenme süreçlerini takip etmelerini sağlar.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Teknolojiler
+
+- **Frontend:** ReactJS
+- **Backend:** Node.js, Express.js
+- **Database:** MySQL
+
+## Kurulum
+
+### Önkoşullar
+
+- Node.js
+- MySQL
+
+### Adımlar
+
+1. **Repositroyu Klonlayın**
+
+2. **Bağımlılıkları Yükleyin**
+
+3. **Veritabanını Kurun**
+
+- MySQL üzerinde `kelime_ezberleme` adında bir veritabanı oluşturun.
+- `config/db.config.js` dosyasını kendi veritabanı bilgilerinizle güncelleyin.
+
+4. **Uygulamayı Çalıştırın**
+
+- Backend için:
+  ```
+  npm start
+  ```
+- Frontend için:
+  ```
+  cd frontend
+  npm install
+  npm start
+  ```
+
+## Özellikler
+
+- Kullanıcı Kayıt/Giriş
+- Kelime Ekleme Modülü
+- Sınav Modülü
+- Kullanıcı Ayarları
+- Raporlama
+
+## Scrum
+
+Projede Scrum metodolojisi kullanılmaktadır:
+
+- **Product Backlog**
+- **Sprint Planning**
+- **Daily Stand-ups**
+- **Sprint Review & Retrospective**
+
+## Katkıda Bulunma
+
+Projeye katkıda bulunmak isteyenler, lütfen `CONTRIBUTING.md` dosyasına göz atın. Her türlü katkıyı takdir ediyor ve hoş karşılıyoruz.
+
+## Lisans
+
+Bu proje MIT lisansı altında lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasını kontrol ediniz.
